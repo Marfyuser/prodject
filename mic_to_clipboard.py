@@ -1,3 +1,4 @@
+print("Скрипт действительно запущен!")
 import speech_recognition as sr
 import pyperclip
 
