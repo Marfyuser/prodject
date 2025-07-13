@@ -345,6 +345,32 @@ const articles = [
             en: "Containerize your applications with Docker",
             ru: "Контейнеризируйте ваши приложения с помощью Docker"
         },
+        content: {
+            en: `
+<h2>Docker for Beginners (8 min)</h2>
+<p><b>Docker</b> is a platform for developing, shipping, and running applications in containers. Containers are lightweight, portable, and ensure consistency across environments.</p>
+<ol>
+  <li><b>Install Docker:</b> <a href="https://docs.docker.com/get-docker/" target="_blank">Official guide</a></li>
+  <li><b>Run your first container:</b> <code>docker run hello-world</code></li>
+  <li><b>Build your own image:</b> <code>docker build -t myapp .</code></li>
+  <li><b>List running containers:</b> <code>docker ps</code></li>
+  <li><b>Stop a container:</b> <code>docker stop [container_id]</code></li>
+</ol>
+<p>Learn more at the <a href="https://docs.docker.com/" target="_blank">official Docker documentation</a>.</p>
+`,
+            ru: `
+<h2>Docker для начинающих (8 минут)</h2>
+<p><b>Docker</b> — это платформа для разработки, доставки и запуска приложений в контейнерах. Контейнеры легковесны, портативны и обеспечивают одинаковую среду на всех этапах.</p>
+<ol>
+  <li><b>Установите Docker:</b> <a href="https://docs.docker.com/get-docker/" target="_blank">Официальная инструкция</a></li>
+  <li><b>Запустите первый контейнер:</b> <code>docker run hello-world</code></li>
+  <li><b>Соберите свой образ:</b> <code>docker build -t myapp .</code></li>
+  <li><b>Посмотрите запущенные контейнеры:</b> <code>docker ps</code></li>
+  <li><b>Остановите контейнер:</b> <code>docker stop [container_id]</code></li>
+</ol>
+<p>Подробнее читайте в <a href="https://docs.docker.com/" target="_blank">официальной документации Docker</a>.</p>
+`
+        },
         category: "devops",
         icon: "fab fa-docker",
         date: "2024-01-10",
@@ -359,6 +385,54 @@ const articles = [
         excerpt: {
             en: "Build web applications with Python and Flask",
             ru: "Создавайте веб-приложения с Python и Flask"
+        },
+        content: {
+            en: `
+<h2>Python Web Development (10 min)</h2>
+<p><b>Python</b> is a versatile language for web development. <b>Flask</b> is a lightweight web framework for building web apps quickly.</p>
+<ol>
+  <li><b>Install Python:</b> <a href="https://www.python.org/downloads/" target="_blank">Download here</a></li>
+  <li><b>Install Flask:</b> <code>pip install flask</code></li>
+  <li><b>Create a simple app:</b>
+    <pre><code>from flask import Flask
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return "Hello, World!"
+
+if __name__ == '__main__':
+    app.run(debug=True)
+</code></pre>
+  </li>
+  <li><b>Run the app:</b> <code>python app.py</code></li>
+  <li>Open <code>http://localhost:5000</code> in your browser.</li>
+</ol>
+<p>Explore more in the <a href="https://flask.palletsprojects.com/" target="_blank">Flask documentation</a>.</p>
+`,
+            ru: `
+<h2>Веб-разработка на Python (10 минут)</h2>
+<p><b>Python</b> — универсальный язык для веб-разработки. <b>Flask</b> — легковесный фреймворк для быстрого создания веб-приложений.</p>
+<ol>
+  <li><b>Установите Python:</b> <a href="https://www.python.org/downloads/" target="_blank">Скачать</a></li>
+  <li><b>Установите Flask:</b> <code>pip install flask</code></li>
+  <li><b>Создайте простое приложение:</b>
+    <pre><code>from flask import Flask
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return "Hello, World!"
+
+if __name__ == '__main__':
+    app.run(debug=True)
+</code></pre>
+  </li>
+  <li><b>Запустите приложение:</b> <code>python app.py</code></li>
+  <li>Откройте <code>http://localhost:5000</code> в браузере.</li>
+</ol>
+<p>Подробнее: <a href="https://flask.palletsprojects.com/" target="_blank">документация Flask</a>.</p>
+`
         },
         category: "programming",
         icon: "fab fa-python",
@@ -375,6 +449,32 @@ const articles = [
             en: "Master version control with Git",
             ru: "Освойте систему контроля версий Git"
         },
+        content: {
+            en: `
+<h2>Git Best Practices (6 min)</h2>
+<p><b>Git</b> is a distributed version control system. Mastering Git helps you collaborate and manage code efficiently.</p>
+<ul>
+  <li><b>Use meaningful commit messages:</b> <code>git commit -m "Add user login feature"</code></li>
+  <li><b>Branch for features and fixes:</b> <code>git checkout -b feature/new-ui</code></li>
+  <li><b>Pull before you push:</b> <code>git pull origin main</code></li>
+  <li><b>Review changes before commit:</b> <code>git status</code>, <code>git diff</code></li>
+  <li><b>Rebase for clean history:</b> <code>git rebase</code></li>
+</ul>
+<p>See the <a href="https://git-scm.com/docs/gittutorial" target="_blank">official Git tutorial</a> for more tips.</p>
+`,
+            ru: `
+<h2>Лучшие практики Git (6 минут)</h2>
+<p><b>Git</b> — распределённая система контроля версий. Владение Git помогает эффективно работать в команде и управлять кодом.</p>
+<ul>
+  <li><b>Пишите осмысленные сообщения коммитов:</b> <code>git commit -m "Add user login feature"</code></li>
+  <li><b>Используйте ветки для фич и багфиксов:</b> <code>git checkout -b feature/new-ui</code></li>
+  <li><b>Перед пушем делайте pull:</b> <code>git pull origin main</code></li>
+  <li><b>Проверяйте изменения перед коммитом:</b> <code>git status</code>, <code>git diff</code></li>
+  <li><b>Используйте rebase для чистой истории:</b> <code>git rebase</code></li>
+</ul>
+<p>Больше советов — в <a href="https://git-scm.com/docs/gittutorial" target="_blank">официальном туториале Git</a>.</p>
+`
+        },
         category: "tutorials",
         icon: "fab fa-git-alt",
         date: "2024-01-01",
@@ -390,6 +490,32 @@ const articles = [
             en: "Modern JavaScript features you need to know",
             ru: "Современные возможности JavaScript, которые нужно знать"
         },
+        content: {
+            en: `
+<h2>JavaScript ES6+ Features (7 min)</h2>
+<p>Modern JavaScript (ES6 and newer) brings many features that make coding easier and more powerful.</p>
+<ul>
+  <li><b>Arrow functions:</b> <code>const add = (a, b) => a + b;</code></li>
+  <li><b>Template literals:</b> <code>const msg = `Hello, ${name}!`;</code></li>
+  <li><b>Destructuring:</b> <code>const [a, b] = arr;</code>, <code>const {x, y} = obj;</code></li>
+  <li><b>Spread/rest:</b> <code>const arr2 = [...arr1, 4, 5];</code></li>
+  <li><b>Async/await:</b> <code>async function fetchData() { await ... }</code></li>
+</ul>
+<p>Learn more at <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">MDN Web Docs</a>.</p>
+`,
+            ru: `
+<h2>Возможности JavaScript ES6+ (7 минут)</h2>
+<p>Современный JavaScript (ES6 и новее) содержит множество возможностей, которые упрощают и ускоряют разработку.</p>
+<ul>
+  <li><b>Стрелочные функции:</b> <code>const add = (a, b) => a + b;</code></li>
+  <li><b>Шаблонные строки:</b> <code>const msg = `Hello, ${name}!`;</code></li>
+  <li><b>Деструктуризация:</b> <code>const [a, b] = arr;</code>, <code>const {x, y} = obj;</code></li>
+  <li><b>Spread/rest:</b> <code>const arr2 = [...arr1, 4, 5];</code></li>
+  <li><b>Async/await:</b> <code>async function fetchData() { await ... }</code></li>
+</ul>
+<p>Подробнее: <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript" target="_blank">MDN Web Docs</a>.</p>
+`
+        },
         category: "programming",
         icon: "fab fa-js-square",
         date: "2023-12-28",
@@ -404,6 +530,32 @@ const articles = [
         excerpt: {
             en: "Learn how to design efficient databases",
             ru: "Узнайте, как проектировать эффективные базы данных"
+        },
+        content: {
+            en: `
+<h2>Database Design Principles (12 min)</h2>
+<p>Good database design is crucial for performance, scalability, and maintainability.</p>
+<ol>
+  <li><b>Normalization:</b> Organize data to reduce redundancy (1NF, 2NF, 3NF).</li>
+  <li><b>Choose the right data types:</b> Use appropriate types for each field.</li>
+  <li><b>Indexes:</b> Speed up queries, but use wisely.</li>
+  <li><b>Relationships:</b> Define clear foreign keys and relationships.</li>
+  <li><b>Backups:</b> Always have a backup strategy.</li>
+</ol>
+<p>See <a href="https://www.lucidchart.com/pages/database-design" target="_blank">Lucidchart DB Design Guide</a> for more.</p>
+`,
+            ru: `
+<h2>Принципы проектирования баз данных (12 минут)</h2>
+<p>Грамотное проектирование базы данных важно для производительности, масштабируемости и поддержки.</p>
+<ol>
+  <li><b>Нормализация:</b> Организуйте данные для уменьшения избыточности (1НФ, 2НФ, 3НФ).</li>
+  <li><b>Выбор типов данных:</b> Используйте подходящие типы для каждого поля.</li>
+  <li><b>Индексы:</b> Ускоряют запросы, но не злоупотребляйте ими.</li>
+  <li><b>Связи:</b> Чётко определяйте внешние ключи и связи.</li>
+  <li><b>Резервное копирование:</b> Всегда имейте стратегию бэкапа.</li>
+</ol>
+<p>Подробнее: <a href="https://www.lucidchart.com/pages/database-design" target="_blank">Гайд по проектированию БД</a>.</p>
+`
         },
         category: "tutorials",
         icon: "fas fa-database",
