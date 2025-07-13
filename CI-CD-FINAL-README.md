@@ -136,3 +136,23 @@ wsl bash -c "echo 'ubuntu' | sudo -S chown -R www-data:www-data /var/www/local-t
 4. **Отправьте в git**: `.\ci-cd-final.ps1`
 
 **Всё работает автоматически! 🎯** 
+
+---
+
+## 🚀 Новый CI/CD через Docker Compose
+
+1. Убедитесь, что установлен Docker и docker-compose.
+2. В корне проекта выполните:
+   ```sh
+   docker-compose up --build -d
+   ```
+3. Сайт будет доступен на http://localhost:8080
+4. Для остановки:
+   ```sh
+   docker-compose down
+   ```
+
+- Все изменения в папке nginx-site/ автоматически попадают в контейнер (volumes).
+- Конфиг nginx берется из nginx-site/nginx.conf
+
+--- 
