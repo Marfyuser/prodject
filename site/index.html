@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Blog - Технический блог</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="lang.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-code"></i>
+                    <span id="site-title">IT Blog</span>
+                </div>
+                <div class="language-switcher">
+                    <button class="lang-btn" onclick="setLanguage('en')">
+                        <i class="fas fa-globe"></i> EN
+                    </button>
+                    <button class="lang-btn" onclick="setLanguage('ru')">
+                        <i class="fas fa-globe"></i> RU
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="emoji">🚀</span>
+                <h1 id="greeting" class="hero-title"></h1>
+                <p id="hero-subtitle" class="hero-subtitle"></p>
+                <div class="search-container">
+                    <div class="search-box">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" id="search-input" placeholder="Поиск статей..." class="search-input">
+                        <button class="search-btn" onclick="searchArticles()">
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Articles Section -->
+    <section class="articles">
+        <div class="container">
+            <div class="section-header">
+                <h2 id="articles-title">Последние статьи</h2>
+                <div class="articles-nav">
+                    <button class="nav-btn" onclick="filterArticles('all')" id="filter-all">
+                        <i class="fas fa-list"></i> Все
+                    </button>
+                    <button class="nav-btn" onclick="filterArticles('programming')" id="filter-programming">
+                        <i class="fas fa-code"></i> Программирование
+                    </button>
+                    <button class="nav-btn" onclick="filterArticles('devops')" id="filter-devops">
+                        <i class="fas fa-server"></i> DevOps
+                    </button>
+                    <button class="nav-btn" onclick="filterArticles('tutorials')" id="filter-tutorials">
+                        <i class="fas fa-graduation-cap"></i> Обучение
+                    </button>
+                </div>
+            </div>
+            
+            <div class="articles-grid" id="articles-grid">
+                <!-- Articles will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2 id="contact-title">Свяжитесь с нами</h2>
+                    <p id="contact-subtitle">Есть вопросы или предложения? Напишите нам!</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@itblog.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+7 (999) 123-45-67</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Москва, Россия</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contact-form" onsubmit="submitForm(event)">
+                        <div class="form-group">
+                            <label for="name" id="name-label">Имя</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" id="email-label">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject" id="subject-label">Тема</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" id="message-label">Сообщение</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn" id="submit-btn">
+                            <i class="fas fa-paper-plane"></i>
+                            <span>Отправить</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 id="footer-title">IT Blog</h3>
+                    <p id="footer-description">Ваш источник знаний в мире технологий</p>
+                </div>
+                <div class="footer-section">
+                    <h4 id="footer-links-title">Ссылки</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" id="footer-home">Главная</a></li>
+                        <li><a href="#" id="footer-articles">Статьи</a></li>
+                        <li><a href="#" id="footer-about">О нас</a></li>
+                        <li><a href="#" id="footer-contact">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 id="footer-social-title">Социальные сети</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-vk"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 IT Blog. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notification -->
+    <div id="notification" class="notification">
+        <div class="notification-content">
+            <i class="notification-icon"></i>
+            <span id="notification-message"></span>
+        </div>
+    </div>
+
+    <!-- Article Modal -->
+    <div id="modal-article" class="modal-article">
+        <div class="modal-article-content">
+            <span class="modal-close" onclick="closeArticle()">&times;</span>
+            <div id="modal-article-body"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
