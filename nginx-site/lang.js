@@ -7,6 +7,7 @@ const translations = {
         articles_title: "Latest Articles",
         filter_all: "All",
         filter_programming: "Programming",
+        filter_networking: "Networking",
         filter_devops: "DevOps",
         filter_tutorials: "Tutorials",
         contact_title: "Contact Us",
@@ -47,6 +48,7 @@ const translations = {
         articles_title: "Последние статьи",
         filter_all: "Все",
         filter_programming: "Программирование",
+        filter_networking: "Сети",
         filter_devops: "DevOps",
         filter_tutorials: "Обучение",
         contact_title: "Свяжитесь с нами",
@@ -98,6 +100,7 @@ function updateContent() {
     document.getElementById('articles-title').textContent = t.articles_title;
     document.getElementById('filter-all').innerHTML = `<i class="fas fa-list"></i> ${t.filter_all}`;
     document.getElementById('filter-programming').innerHTML = `<i class="fas fa-code"></i> ${t.filter_programming}`;
+    document.getElementById('filter-networking').innerHTML = `<i class="fas fa-network-wired"></i> ${t.filter_networking}`;
     document.getElementById('filter-devops').innerHTML = `<i class="fas fa-server"></i> ${t.filter_devops}`;
     document.getElementById('filter-tutorials').innerHTML = `<i class="fas fa-graduation-cap"></i> ${t.filter_tutorials}`;
     document.getElementById('contact-title').textContent = t.contact_title;
