@@ -1536,6 +1536,38 @@ function closeArticle() {
     document.body.style.overflow = '';
 }
 
+// Close modal when clicking outside
+document.addEventListener('DOMContentLoaded', function() {
+    const articleModal = document.getElementById('modal-article');
+    const bestiaryModal = document.getElementById('modal-bestiary');
+    
+    // Close article modal when clicking outside
+    articleModal.addEventListener('click', function(e) {
+        if (e.target === articleModal) {
+            closeArticle();
+        }
+    });
+    
+    // Close bestiary modal when clicking outside
+    bestiaryModal.addEventListener('click', function(e) {
+        if (e.target === bestiaryModal) {
+            closeBestiary();
+        }
+    });
+    
+    // Close modals with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            if (articleModal.classList.contains('show')) {
+                closeArticle();
+            }
+            if (bestiaryModal.classList.contains('show')) {
+                closeBestiary();
+            }
+        }
+    });
+});
+
 // Submit contact form
 function submitForm(event) {
     event.preventDefault();
