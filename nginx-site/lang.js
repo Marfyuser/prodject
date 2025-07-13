@@ -1,7 +1,7 @@
 const translations = {
     en: {
-        greeting: "Welcome to IT Blog!",
-        hero_subtitle: "Your source of knowledge in the world of technology",
+        greeting: "🚀 Welcome to IT Blog - Your Tech Journey Starts Here! 🚀",
+        hero_subtitle: "Your ultimate source of knowledge in the world of technology",
         site_title: "IT Blog",
         search_placeholder: "Search articles...",
         articles_title: "Latest Articles",
@@ -40,8 +40,8 @@ const translations = {
         article_6_excerpt: "Learn how to design efficient databases"
     },
     ru: {
-        greeting: "Добро пожаловать в IT Blog!",
-        hero_subtitle: "Ваш источник знаний в мире технологий",
+        greeting: "🚀 Добро пожаловать в IT Blog - Ваше путешествие в мир технологий начинается здесь! 🚀",
+        hero_subtitle: "Ваш главный источник знаний в мире технологий",
         site_title: "IT Blog",
         search_placeholder: "Поиск статей...",
         articles_title: "Последние статьи",
