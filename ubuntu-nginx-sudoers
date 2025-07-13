@@ -1,0 +1,18 @@
+# Конфигурация sudoers для пользователя ubuntu
+# Разрешает выполнение команд nginx и cp без ввода пароля
+
+ubuntu ALL=(ALL) NOPASSWD: /usr/sbin/nginx
+ubuntu ALL=(ALL) NOPASSWD: /bin/cp
+ubuntu ALL=(ALL) NOPASSWD: /usr/bin/cp
+ubuntu ALL=(ALL) NOPASSWD: /bin/systemctl
+ubuntu ALL=(ALL) NOPASSWD: /usr/bin/systemctl
+ubuntu ALL=(ALL) NOPASSWD: /bin/mkdir
+ubuntu ALL=(ALL) NOPASSWD: /usr/bin/mkdir
+ubuntu ALL=(ALL) NOPASSWD: /bin/rm
+ubuntu ALL=(ALL) NOPASSWD: /usr/bin/rm
+ubuntu ALL=(ALL) NOPASSWD: /bin/ln
+ubuntu ALL=(ALL) NOPASSWD: /usr/bin/ln
+ubuntu ALL=(ALL) NOPASSWD: /bin/chown
+ubuntu ALL=(ALL) NOPASSWD: /usr/bin/chown
+ubuntu ALL=(ALL) NOPASSWD: /bin/chmod
+ubuntu ALL=(ALL) NOPASSWD: /usr/bin/chmod 
