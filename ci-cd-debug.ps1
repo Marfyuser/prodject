@@ -23,6 +23,14 @@ wsl -d Ubuntu-22.04 -e bash -c "mkdir -p $tempDir"
 # Копируем проект в WSL
 Write-Host "📋 Копирование проекта в WSL..." -ForegroundColor Yellow
 $currentDir = Get-Location
+$nginxSitePath = Join-Path $currentDir 'nginx-site'
+if (!(Test-Path $nginxSitePath)) {
+    Write-Host "❌ Папка nginx-site не найдена по пути: $nginxSitePath" -ForegroundColor Red
+    Write-Host "💡 Проверьте структуру проекта и повторите попытку." -ForegroundColor Yellow
+    exit 1
+}
+
+# Копируем только если папка существует
 wsl -d Ubuntu-22.04 -e bash -c "cp -r '$currentDir'/* $tempDir/"
 
 # Устанавливаем nginx в WSL Ubuntu

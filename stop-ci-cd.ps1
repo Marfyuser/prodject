@@ -5,7 +5,7 @@ Write-Host '🛑 Остановка CI/CD тестирования...' -Foregrou
 wsl -d Ubuntu-22.04 -e bash -c 'sudo systemctl stop nginx'
 
 # Удаляем временную директорию
-wsl -d Ubuntu-22.04 -e bash -c 'rm -rf /tmp/ci-cd-test-20250713-131726'
+wsl -d Ubuntu-22.04 -e bash -c 'rm -rf /tmp/ci-cd-test-20250713-145505'
 
 # Удаляем конфигурацию сайта
 wsl -d Ubuntu-22.04 -e bash -c 'sudo rm -f /etc/nginx/sites-enabled/ci-cd-test'
