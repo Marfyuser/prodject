@@ -1,3 +1,297 @@
+// IT Bestiary Database
+const bestiaryTerms = [
+    {
+        id: 1,
+        term: {
+            en: "Docker",
+            ru: "Docker"
+        },
+        description: {
+            en: "A platform for developing, shipping, and running applications in containers",
+            ru: "Платформа для разработки, доставки и запуска приложений в контейнерах"
+        },
+        detailed: {
+            en: "Docker is a set of platform as a service (PaaS) products that use OS-level virtualization to deliver software in packages called containers. Containers are isolated from one another and bundle their own software, libraries, and configuration files.",
+            ru: "Docker — это набор продуктов платформы как услуга (PaaS), которые используют виртуализацию на уровне ОС для доставки программного обеспечения в пакетах, называемых контейнерами. Контейнеры изолированы друг от друга и содержат собственное программное обеспечение, библиотеки и файлы конфигурации."
+        },
+        examples: {
+            en: [
+                "docker run nginx",
+                "docker build -t myapp .",
+                "docker-compose up -d"
+            ],
+            ru: [
+                "docker run nginx",
+                "docker build -t myapp .",
+                "docker-compose up -d"
+            ]
+        },
+        category: "devops",
+        difficulty: "intermediate"
+    },
+    {
+        id: 2,
+        term: {
+            en: "Kubernetes",
+            ru: "Kubernetes"
+        },
+        description: {
+            en: "An open-source container orchestration platform",
+            ru: "Платформа оркестрации контейнеров с открытым исходным кодом"
+        },
+        detailed: {
+            en: "Kubernetes (K8s) is an open-source container orchestration platform that automates the deployment, scaling, and management of containerized applications. It groups containers that make up an application into logical units for easy management and discovery.",
+            ru: "Kubernetes (K8s) — это платформа оркестрации контейнеров с открытым исходным кодом, которая автоматизирует развертывание, масштабирование и управление контейнеризированными приложениями. Она группирует контейнеры, составляющие приложение, в логические единицы для легкого управления и обнаружения."
+        },
+        examples: {
+            en: [
+                "kubectl get pods",
+                "kubectl apply -f deployment.yaml",
+                "kubectl scale deployment nginx --replicas=3"
+            ],
+            ru: [
+                "kubectl get pods",
+                "kubectl apply -f deployment.yaml",
+                "kubectl scale deployment nginx --replicas=3"
+            ]
+        },
+        category: "devops",
+        difficulty: "advanced"
+    },
+    {
+        id: 3,
+        term: {
+            en: "API Gateway",
+            ru: "API Gateway"
+        },
+        description: {
+            en: "A server that acts as an API front-end, receiving API requests and routing them to the appropriate backend services",
+            ru: "Сервер, который действует как фронтенд API, получает запросы API и направляет их к соответствующим сервисам"
+        },
+        detailed: {
+            en: "An API Gateway is a server that acts as an API front-end, receiving API requests, routing them to the appropriate backend services, and returning the responses. It handles cross-cutting concerns like authentication, rate limiting, and request/response transformation.",
+            ru: "API Gateway — это сервер, который действует как фронтенд API, получает запросы API, направляет их к соответствующим сервисам и возвращает ответы. Он обрабатывает сквозные проблемы, такие как аутентификация, ограничение скорости и преобразование запросов/ответов."
+        },
+        examples: {
+            en: [
+                "Kong Gateway",
+                "AWS API Gateway",
+                "Azure API Management"
+            ],
+            ru: [
+                "Kong Gateway",
+                "AWS API Gateway",
+                "Azure API Management"
+            ]
+        },
+        category: "programming",
+        difficulty: "intermediate"
+    },
+    {
+        id: 4,
+        term: {
+            en: "Load Balancer",
+            ru: "Балансировщик нагрузки"
+        },
+        description: {
+            en: "A device that distributes network traffic across multiple servers",
+            ru: "Устройство, которое распределяет сетевой трафик между несколькими серверами"
+        },
+        detailed: {
+            en: "A load balancer is a device that acts as a reverse proxy and distributes network or application traffic across a number of servers. Load balancers are used to increase capacity and reliability of applications.",
+            ru: "Балансировщик нагрузки — это устройство, которое действует как обратный прокси и распределяет сетевой или прикладной трафик между несколькими серверами. Балансировщики нагрузки используются для увеличения производительности и надежности приложений."
+        },
+        examples: {
+            en: [
+                "nginx load balancer",
+                "HAProxy",
+                "AWS ELB (Elastic Load Balancer)"
+            ],
+            ru: [
+                "nginx балансировщик нагрузки",
+                "HAProxy",
+                "AWS ELB (Elastic Load Balancer)"
+            ]
+        },
+        category: "networking",
+        difficulty: "intermediate"
+    },
+    {
+        id: 5,
+        term: {
+            en: "Microservices",
+            ru: "Микросервисы"
+        },
+        description: {
+            en: "An architectural style that structures an application as a collection of loosely coupled services",
+            ru: "Архитектурный стиль, который структурирует приложение как набор слабосвязанных сервисов"
+        },
+        detailed: {
+            en: "Microservices is an architectural style that structures an application as a collection of loosely coupled, fine-grained services, communicating through lightweight protocols such as HTTP/REST or message queues.",
+            ru: "Микросервисы — это архитектурный стиль, который структурирует приложение как набор слабосвязанных, мелкозернистых сервисов, взаимодействующих через легкие протоколы, такие как HTTP/REST или очереди сообщений."
+        },
+        examples: {
+            en: [
+                "User Service",
+                "Payment Service",
+                "Notification Service"
+            ],
+            ru: [
+                "Сервис пользователей",
+                "Сервис платежей",
+                "Сервис уведомлений"
+            ]
+        },
+        category: "programming",
+        difficulty: "advanced"
+    },
+    {
+        id: 6,
+        term: {
+            en: "CI/CD",
+            ru: "CI/CD"
+        },
+        description: {
+            en: "Continuous Integration and Continuous Deployment - automated software delivery pipeline",
+            ru: "Непрерывная интеграция и непрерывное развертывание - автоматизированный конвейер доставки ПО"
+        },
+        detailed: {
+            en: "CI/CD is a method to frequently deliver apps to customers by introducing automation into the stages of app development. CI/CD includes continuous integration, continuous delivery, and continuous deployment.",
+            ru: "CI/CD — это метод частой доставки приложений клиентам путем внедрения автоматизации на этапах разработки приложений. CI/CD включает непрерывную интеграцию, непрерывную доставку и непрерывное развертывание."
+        },
+        examples: {
+            en: [
+                "Jenkins pipeline",
+                "GitHub Actions",
+                "GitLab CI/CD"
+            ],
+            ru: [
+                "Jenkins pipeline",
+                "GitHub Actions",
+                "GitLab CI/CD"
+            ]
+        },
+        category: "devops",
+        difficulty: "intermediate"
+    },
+    {
+        id: 7,
+        term: {
+            en: "SSL/TLS",
+            ru: "SSL/TLS"
+        },
+        description: {
+            en: "Cryptographic protocols designed to provide communications security over a computer network",
+            ru: "Криптографические протоколы, предназначенные для обеспечения безопасности связи по компьютерной сети"
+        },
+        detailed: {
+            en: "SSL (Secure Sockets Layer) and TLS (Transport Layer Security) are cryptographic protocols designed to provide communications security over a computer network. They are commonly used in web browsing, email, instant messaging, and voice over IP.",
+            ru: "SSL (Secure Sockets Layer) и TLS (Transport Layer Security) — это криптографические протоколы, предназначенные для обеспечения безопасности связи по компьютерной сети. Они обычно используются в веб-браузерах, электронной почте, мгновенных сообщениях и голосовой связи по IP."
+        },
+        examples: {
+            en: [
+                "HTTPS websites",
+                "SSL certificates",
+                "TLS handshake"
+            ],
+            ru: [
+                "HTTPS веб-сайты",
+                "SSL сертификаты",
+                "TLS рукопожатие"
+            ]
+        },
+        category: "security",
+        difficulty: "intermediate"
+    },
+    {
+        id: 8,
+        term: {
+            en: "JWT",
+            ru: "JWT"
+        },
+        description: {
+            en: "JSON Web Token - a compact, URL-safe means of representing claims to be transferred between two parties",
+            ru: "JSON Web Token - компактный, URL-безопасный способ представления утверждений для передачи между двумя сторонами"
+        },
+        detailed: {
+            en: "JWT (JSON Web Token) is a compact, URL-safe means of representing claims to be transferred between two parties. JWTs are commonly used for authentication and authorization in web applications.",
+            ru: "JWT (JSON Web Token) — это компактный, URL-безопасный способ представления утверждений для передачи между двумя сторонами. JWT обычно используются для аутентификации и авторизации в веб-приложениях."
+        },
+        examples: {
+            en: [
+                "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+                "Authorization: Bearer <token>",
+                "JWT.decode(token, secret)"
+            ],
+            ru: [
+                "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+                "Authorization: Bearer <token>",
+                "JWT.decode(token, secret)"
+            ]
+        },
+        category: "security",
+        difficulty: "intermediate"
+    },
+    {
+        id: 9,
+        term: {
+            en: "GraphQL",
+            ru: "GraphQL"
+        },
+        description: {
+            en: "A query language for APIs and a runtime for executing those queries with your existing data",
+            ru: "Язык запросов для API и среда выполнения для выполнения этих запросов с вашими существующими данными"
+        },
+        detailed: {
+            en: "GraphQL is a query language for APIs and a runtime for executing those queries with your existing data. It provides a complete and understandable description of the data in your API, gives clients the power to ask for exactly what they need.",
+            ru: "GraphQL — это язык запросов для API и среда выполнения для выполнения этих запросов с вашими существующими данными. Он предоставляет полное и понятное описание данных в вашем API, дает клиентам возможность запрашивать именно то, что им нужно."
+        },
+        examples: {
+            en: [
+                "query { user(id: 1) { name email } }",
+                "Apollo Server",
+                "GraphQL Playground"
+            ],
+            ru: [
+                "query { user(id: 1) { name email } }",
+                "Apollo Server",
+                "GraphQL Playground"
+            ]
+        },
+        category: "programming",
+        difficulty: "intermediate"
+    },
+    {
+        id: 10,
+        term: {
+            en: "WebSocket",
+            ru: "WebSocket"
+        },
+        description: {
+            en: "A computer communications protocol, providing full-duplex communication channels over a single TCP connection",
+            ru: "Компьютерный протокол связи, обеспечивающий полнодуплексные каналы связи через одно TCP-соединение"
+        },
+        detailed: {
+            en: "WebSocket is a computer communications protocol, providing full-duplex communication channels over a single TCP connection. It enables real-time communication between web browsers and servers.",
+            ru: "WebSocket — это компьютерный протокол связи, обеспечивающий полнодуплексные каналы связи через одно TCP-соединение. Он обеспечивает связь в реальном времени между веб-браузерами и серверами."
+        },
+        examples: {
+            en: [
+                "ws://localhost:8080",
+                "Socket.io",
+                "Real-time chat"
+            ],
+            ru: [
+                "ws://localhost:8080",
+                "Socket.io",
+                "Чат в реальном времени"
+            ]
+        },
+        category: "programming",
+        difficulty: "intermediate"
+    }
+];
+
 // Sample articles data
 const articles = [
     {
@@ -1388,4 +1682,145 @@ style.textContent = `
         }
     }
 `;
-document.head.appendChild(style); 
+document.head.appendChild(style);
+
+// Bestiary variables
+let currentBestiaryFilter = 'all';
+let filteredBestiaryTerms = [...bestiaryTerms];
+
+// Load and display bestiary terms
+function loadBestiary() {
+    const lang = localStorage.getItem('lang') || 'en';
+    const bestiaryList = document.getElementById('bestiary-list');
+    
+    bestiaryList.innerHTML = '';
+    
+    filteredBestiaryTerms.forEach(term => {
+        const termCard = createBestiaryTermCard(term, lang);
+        bestiaryList.appendChild(termCard);
+    });
+}
+
+// Create bestiary term card element
+function createBestiaryTermCard(term, lang) {
+    const card = document.createElement('div');
+    card.className = 'bestiary-term';
+    card.onclick = () => openBestiaryTerm(term.id);
+    
+    card.innerHTML = `
+        <div class="bestiary-term-header">
+            <span class="bestiary-term-title">${term.term[lang]}</span>
+            <span class="bestiary-term-category">${getBestiaryCategoryName(term.category, lang)}</span>
+        </div>
+        <div class="bestiary-term-description">${term.description[lang]}</div>
+        ${term.examples[lang][0] ? `<div class="bestiary-term-example">${term.examples[lang][0]}</div>` : ''}
+    `;
+    
+    return card;
+}
+
+// Get bestiary category name in current language
+function getBestiaryCategoryName(category, lang) {
+    const categories = {
+        programming: {
+            en: "Programming",
+            ru: "Программирование"
+        },
+        networking: {
+            en: "Networking",
+            ru: "Сети"
+        },
+        devops: {
+            en: "DevOps",
+            ru: "DevOps"
+        },
+        security: {
+            en: "Security",
+            ru: "Безопасность"
+        }
+    };
+    
+    return categories[category][lang];
+}
+
+// Filter bestiary terms by category
+function filterBestiary(category) {
+    currentBestiaryFilter = category;
+    
+    // Update active button
+    document.querySelectorAll('.bestiary-cat-btn').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    event.target.classList.add('active');
+    
+    // Filter terms
+    if (category === 'all') {
+        filteredBestiaryTerms = [...bestiaryTerms];
+    } else {
+        filteredBestiaryTerms = bestiaryTerms.filter(term => term.category === category);
+    }
+    
+    // Reload terms
+    loadBestiary();
+}
+
+// Search bestiary terms
+function searchBestiary() {
+    const searchTerm = document.getElementById('bestiary-search-input').value.toLowerCase();
+    const lang = localStorage.getItem('lang') || 'en';
+    
+    if (searchTerm.trim() === '') {
+        filteredBestiaryTerms = currentBestiaryFilter === 'all' ? [...bestiaryTerms] : bestiaryTerms.filter(term => term.category === currentBestiaryFilter);
+    } else {
+        filteredBestiaryTerms = bestiaryTerms.filter(term => 
+            term.term[lang].toLowerCase().includes(searchTerm) ||
+            term.description[lang].toLowerCase().includes(searchTerm) ||
+            getBestiaryCategoryName(term.category, lang).toLowerCase().includes(searchTerm)
+        );
+    }
+    
+    loadBestiary();
+}
+
+// Open bestiary term modal
+function openBestiaryTerm(termId) {
+    const lang = localStorage.getItem('lang') || 'en';
+    const term = bestiaryTerms.find(t => t.id === termId);
+    if (term) {
+        const modal = document.getElementById('modal-bestiary');
+        const body = document.getElementById('modal-bestiary-body');
+        
+        body.innerHTML = `
+            <h2 class="bestiary-modal-title">${term.term[lang]}</h2>
+            <span class="bestiary-modal-category">${getBestiaryCategoryName(term.category, lang)}</span>
+            <p class="bestiary-modal-description">${term.detailed[lang]}</p>
+            <div class="bestiary-modal-examples">
+                <h4>Examples / Примеры:</h4>
+                <ul>
+                    ${term.examples[lang].map(example => `<li><code>${example}</code></li>`).join('')}
+                </ul>
+            </div>
+        `;
+        
+        modal.classList.add('show');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+// Close bestiary modal
+function closeBestiary() {
+    document.getElementById('modal-bestiary').classList.remove('show');
+    document.body.style.overflow = '';
+}
+
+// Search bestiary on Enter key
+document.addEventListener('DOMContentLoaded', function() {
+    const bestiarySearchInput = document.getElementById('bestiary-search-input');
+    if (bestiarySearchInput) {
+        bestiarySearchInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                searchBestiary();
+            }
+        });
+    }
+}); 

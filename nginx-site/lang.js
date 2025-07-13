@@ -10,6 +10,14 @@ const translations = {
         filter_networking: "Networking",
         filter_devops: "DevOps",
         filter_tutorials: "Tutorials",
+        bestiary_title: "IT Bestiary",
+        bestiary_subtitle: "Non-obvious IT terms and their interpretations",
+        bestiary_search_placeholder: "Search terms...",
+        bestiary_filter_all: "All",
+        bestiary_filter_programming: "Programming",
+        bestiary_filter_networking: "Networking",
+        bestiary_filter_devops: "DevOps",
+        bestiary_filter_security: "Security",
         contact_title: "Contact Us",
         contact_subtitle: "Have questions or suggestions? Write to us!",
         name_label: "Name",
@@ -51,6 +59,14 @@ const translations = {
         filter_networking: "Сети",
         filter_devops: "DevOps",
         filter_tutorials: "Обучение",
+        bestiary_title: "IT Бестиарий",
+        bestiary_subtitle: "Неочевидные IT-термины и их трактовки",
+        bestiary_search_placeholder: "Поиск терминов...",
+        bestiary_filter_all: "Все",
+        bestiary_filter_programming: "Программирование",
+        bestiary_filter_networking: "Сети",
+        bestiary_filter_devops: "DevOps",
+        bestiary_filter_security: "Безопасность",
         contact_title: "Свяжитесь с нами",
         contact_subtitle: "Есть вопросы или предложения? Напишите нам!",
         name_label: "Имя",
@@ -103,6 +119,16 @@ function updateContent() {
     document.getElementById('filter-networking').innerHTML = `<i class="fas fa-network-wired"></i> ${t.filter_networking}`;
     document.getElementById('filter-devops').innerHTML = `<i class="fas fa-server"></i> ${t.filter_devops}`;
     document.getElementById('filter-tutorials').innerHTML = `<i class="fas fa-graduation-cap"></i> ${t.filter_tutorials}`;
+    
+    // Update bestiary texts
+    document.getElementById('bestiary-title').innerHTML = `<i class="fas fa-book-dead"></i> ${t.bestiary_title}`;
+    document.getElementById('bestiary-subtitle').textContent = t.bestiary_subtitle;
+    document.getElementById('bestiary-search-input').placeholder = t.bestiary_search_placeholder;
+    document.getElementById('bestiary-filter-all').innerHTML = `<i class="fas fa-list"></i> ${t.bestiary_filter_all}`;
+    document.getElementById('bestiary-filter-programming').innerHTML = `<i class="fas fa-code"></i> ${t.bestiary_filter_programming}`;
+    document.getElementById('bestiary-filter-networking').innerHTML = `<i class="fas fa-network-wired"></i> ${t.bestiary_filter_networking}`;
+    document.getElementById('bestiary-filter-devops').innerHTML = `<i class="fas fa-server"></i> ${t.bestiary_filter_devops}`;
+    document.getElementById('bestiary-filter-security').innerHTML = `<i class="fas fa-shield-alt"></i> ${t.bestiary_filter_security}`;
     document.getElementById('contact-title').textContent = t.contact_title;
     document.getElementById('contact-subtitle').textContent = t.contact_subtitle;
     document.getElementById('name-label').textContent = t.name_label;
@@ -130,4 +156,5 @@ function updateContent() {
 window.onload = function() {
     updateContent();
     loadArticles();
+    loadBestiary();
 }; 

@@ -149,10 +149,22 @@ body {
     box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
 }
 
-/* Articles Section */
-.articles {
+/* Main Content Section */
+.main-content {
     padding: 80px 0;
     background: white;
+}
+
+.content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 3rem;
+    align-items: start;
+}
+
+/* Articles Section */
+.articles-section {
+    /* Articles styles remain the same */
 }
 
 .section-header {
@@ -636,4 +648,270 @@ body {
 }
 #modal-article-body p {
     margin-bottom: 1em;
+}
+
+/* IT Bestiary Sidebar */
+.bestiary-sidebar {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 120px;
+    max-height: calc(100vh - 140px);
+    overflow-y: auto;
+}
+
+.bestiary-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #667eea;
+}
+
+.bestiary-header h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.bestiary-header h3 i {
+    color: #667eea;
+    font-size: 1.8rem;
+}
+
+.bestiary-header p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.bestiary-search {
+    margin-bottom: 1.5rem;
+}
+
+.bestiary-search .search-box {
+    max-width: 100%;
+    border-radius: 15px;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.bestiary-search .search-input {
+    font-size: 0.9rem;
+}
+
+.bestiary-categories {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.bestiary-cat-btn {
+    background: white;
+    color: #333;
+    border: 2px solid #e9ecef;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-align: left;
+}
+
+.bestiary-cat-btn:hover,
+.bestiary-cat-btn.active {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border-color: #667eea;
+    transform: translateX(5px);
+}
+
+.bestiary-list {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.bestiary-term {
+    background: white;
+    border-radius: 15px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-left: 4px solid #667eea;
+}
+
+.bestiary-term:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.bestiary-term-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.bestiary-term-title {
+    font-weight: 600;
+    color: #333;
+    font-size: 1rem;
+}
+
+.bestiary-term-category {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 10px;
+    font-size: 0.7rem;
+    font-weight: 500;
+}
+
+.bestiary-term-description {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+}
+
+.bestiary-term-example {
+    background: #f8f9fa;
+    padding: 0.5rem;
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.8rem;
+    color: #333;
+    border-left: 3px solid #667eea;
+}
+
+/* Bestiary Modal */
+.bestiary-modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+.bestiary-modal.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bestiary-modal-content {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.bestiary-modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 2rem;
+    color: #999;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.bestiary-modal-close:hover {
+    color: #333;
+}
+
+.bestiary-modal-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 1rem;
+    padding-right: 2rem;
+}
+
+.bestiary-modal-category {
+    display: inline-block;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.bestiary-modal-description {
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.bestiary-modal-examples {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.bestiary-modal-examples h4 {
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.bestiary-modal-examples code {
+    background: #e9ecef;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design for Bestiary */
+@media (max-width: 1024px) {
+    .content-wrapper {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .bestiary-sidebar {
+        position: static;
+        max-height: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .bestiary-sidebar {
+        padding: 1.5rem;
+    }
+    
+    .bestiary-categories {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .bestiary-cat-btn {
+        flex: 1;
+        min-width: 120px;
+    }
 } 

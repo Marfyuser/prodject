@@ -50,32 +50,80 @@
         </div>
     </section>
 
-    <!-- Articles Section -->
-    <section class="articles">
+    <!-- Main Content Section -->
+    <section class="main-content">
         <div class="container">
-            <div class="section-header">
-                <h2 id="articles-title">Последние статьи</h2>
-                <div class="articles-nav">
-                    <button class="nav-btn" onclick="filterArticles('all')" id="filter-all">
-                        <i class="fas fa-list"></i> Все
-                    </button>
-                    <button class="nav-btn" onclick="filterArticles('programming')" id="filter-programming">
-                        <i class="fas fa-code"></i> Программирование
-                    </button>
-                    <button class="nav-btn" onclick="filterArticles('networking')" id="filter-networking">
-                        <i class="fas fa-network-wired"></i> Сети
-                    </button>
-                    <button class="nav-btn" onclick="filterArticles('devops')" id="filter-devops">
-                        <i class="fas fa-server"></i> DevOps
-                    </button>
-                    <button class="nav-btn" onclick="filterArticles('tutorials')" id="filter-tutorials">
-                        <i class="fas fa-graduation-cap"></i> Обучение
-                    </button>
+            <div class="content-wrapper">
+                <!-- Articles Section -->
+                <div class="articles-section">
+                    <div class="section-header">
+                        <h2 id="articles-title">Последние статьи</h2>
+                        <div class="articles-nav">
+                            <button class="nav-btn" onclick="filterArticles('all')" id="filter-all">
+                                <i class="fas fa-list"></i> Все
+                            </button>
+                            <button class="nav-btn" onclick="filterArticles('programming')" id="filter-programming">
+                                <i class="fas fa-code"></i> Программирование
+                            </button>
+                            <button class="nav-btn" onclick="filterArticles('networking')" id="filter-networking">
+                                <i class="fas fa-network-wired"></i> Сети
+                            </button>
+                            <button class="nav-btn" onclick="filterArticles('devops')" id="filter-devops">
+                                <i class="fas fa-server"></i> DevOps
+                            </button>
+                            <button class="nav-btn" onclick="filterArticles('tutorials')" id="filter-tutorials">
+                                <i class="fas fa-graduation-cap"></i> Обучение
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="articles-grid" id="articles-grid">
+                        <!-- Articles will be loaded here -->
+                    </div>
                 </div>
-            </div>
-            
-            <div class="articles-grid" id="articles-grid">
-                <!-- Articles will be loaded here -->
+
+                <!-- IT Bestiary Sidebar -->
+                <div class="bestiary-sidebar">
+                    <div class="bestiary-header">
+                        <h3 id="bestiary-title">
+                            <i class="fas fa-book-dead"></i>
+                            IT Бестиарий
+                        </h3>
+                        <p id="bestiary-subtitle">Неочевидные IT-термины и их трактовки</p>
+                    </div>
+                    
+                    <div class="bestiary-search">
+                        <div class="search-box">
+                            <i class="fas fa-search search-icon"></i>
+                            <input type="text" id="bestiary-search-input" placeholder="Поиск терминов..." class="search-input">
+                            <button class="search-btn" onclick="searchBestiary()">
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="bestiary-categories">
+                        <button class="bestiary-cat-btn active" onclick="filterBestiary('all')" id="bestiary-filter-all">
+                            <i class="fas fa-list"></i> Все
+                        </button>
+                        <button class="bestiary-cat-btn" onclick="filterBestiary('programming')" id="bestiary-filter-programming">
+                            <i class="fas fa-code"></i> Программирование
+                        </button>
+                        <button class="bestiary-cat-btn" onclick="filterBestiary('networking')" id="bestiary-filter-networking">
+                            <i class="fas fa-network-wired"></i> Сети
+                        </button>
+                        <button class="bestiary-cat-btn" onclick="filterBestiary('devops')" id="bestiary-filter-devops">
+                            <i class="fas fa-server"></i> DevOps
+                        </button>
+                        <button class="bestiary-cat-btn" onclick="filterBestiary('security')" id="bestiary-filter-security">
+                            <i class="fas fa-shield-alt"></i> Безопасность
+                        </button>
+                    </div>
+
+                    <div class="bestiary-list" id="bestiary-list">
+                        <!-- Bestiary terms will be loaded here -->
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -177,6 +225,14 @@
         <div class="modal-article-content">
             <span class="modal-close" onclick="closeArticle()">&times;</span>
             <div id="modal-article-body"></div>
+        </div>
+    </div>
+
+    <!-- Bestiary Modal -->
+    <div id="modal-bestiary" class="bestiary-modal">
+        <div class="bestiary-modal-content">
+            <span class="bestiary-modal-close" onclick="closeBestiary()">&times;</span>
+            <div id="modal-bestiary-body"></div>
         </div>
     </div>
 
