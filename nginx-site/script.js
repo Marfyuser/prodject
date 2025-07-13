@@ -10,6 +10,32 @@ const articles = [
             en: "Learn the basics of React development and build your first component",
             ru: "Изучите основы разработки на React и создайте свой первый компонент"
         },
+        content: {
+            en: `
+<h2>Getting Started with React (Beginner, 5 min)</h2>
+<p><b>React</b> is a popular JavaScript library for building user interfaces. Let's create your first React app in just 5 minutes!</p>
+<ol>
+  <li><b>Install Node.js</b> (if not installed):<br><code>https://nodejs.org/</code></li>
+  <li><b>Open terminal and run:</b><br><code>npx create-react-app my-app</code></li>
+  <li><b>Go to the project folder:</b><br><code>cd my-app</code></li>
+  <li><b>Start the development server:</b><br><code>npm start</code></li>
+  <li>Open <code>src/App.js</code> and change the text. Save and see changes live!</li>
+</ol>
+<p>Congratulations! 🎉 You just launched your first React app. Explore the <a href="https://react.dev/" target="_blank">official docs</a> for more.</p>
+`,
+            ru: `
+<h2>Начало работы с React (Простой уровень, 5 минут)</h2>
+<p><b>React</b> — популярная библиотека JavaScript для создания интерфейсов. Давайте создадим первое React-приложение всего за 5 минут!</p>
+<ol>
+  <li><b>Установите Node.js</b> (если не установлен):<br><code>https://nodejs.org/</code></li>
+  <li><b>Откройте терминал и выполните:</b><br><code>npx create-react-app my-app</code></li>
+  <li><b>Перейдите в папку проекта:</b><br><code>cd my-app</code></li>
+  <li><b>Запустите сервер разработки:</b><br><code>npm start</code></li>
+  <li>Откройте <code>src/App.js</code> и измените текст. Сохраните — увидите изменения сразу!</li>
+</ol>
+<p>Поздравляем! 🎉 Вы только что запустили своё первое React-приложение. Изучайте <a href="https://ru.react.dev/" target="_blank">официальную документацию</a> для большего.</p>
+`
+        },
         category: "programming",
         icon: "fab fa-react",
         date: "2024-01-15",
@@ -225,12 +251,18 @@ document.addEventListener('DOMContentLoaded', function() {
 function openArticle(articleId) {
     const lang = localStorage.getItem('lang') || 'en';
     const article = articles.find(a => a.id === articleId);
-    
     if (article) {
-        showNotification(`Opening article: ${article.title[lang]}`, 'success');
-        // Here you would typically navigate to the article page
-        // For now, we'll just show a notification
+        const modal = document.getElementById('modal-article');
+        const body = document.getElementById('modal-article-body');
+        body.innerHTML = article.content[lang];
+        modal.classList.add('show');
+        document.body.style.overflow = 'hidden';
     }
+}
+
+function closeArticle() {
+    document.getElementById('modal-article').classList.remove('show');
+    document.body.style.overflow = '';
 }
 
 // Submit contact form
