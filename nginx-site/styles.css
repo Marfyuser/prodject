@@ -94,6 +94,7 @@ body {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     animation: fadeInUp 1s ease;
+    text-shadow: 2px 2px 8px #fff, 0 2px 24px #0008, 0 1px 0 #fff;
 }
 
 .hero-subtitle {
