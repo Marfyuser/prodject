@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест CI/CD системы</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        h1 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+        .status {
+            background: rgba(76, 175, 80, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 2px solid #4CAF50;
+        }
+        .timestamp {
+            font-size: 0.9em;
+            opacity: 0.8;
+            margin-top: 20px;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .feature {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .feature h3 {
+            margin-top: 0;
+            color: #FFD700;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 CI/CD Система Работает!</h1>
+        
+        <div class="status">
+            <h2>✅ Статус: Успешно</h2>
+            <p>Система непрерывной интеграции и развертывания функционирует корректно</p>
+        </div>
+
+        <div class="features">
+            <div class="feature">
+                <h3>🔄 Синхронизация</h3>
+                <p>Файлы автоматически синхронизируются из Windows в WSL</p>
+            </div>
+            <div class="feature">
+                <h3>🌐 Nginx</h3>
+                <p>Веб-сервер автоматически перезагружается</p>
+            </div>
+            <div class="feature">
+                <h3>🧪 Тестирование</h3>
+                <p>Сайт проверяется на работоспособность</p>
+            </div>
+            <div class="feature">
+                <h3>📝 Git</h3>
+                <p>Изменения автоматически коммитятся и пушатся</p>
+            </div>
+        </div>
+
+        <div class="timestamp">
+            <p>Тест выполнен: <span id="timestamp"></span></p>
+            <p>IP адрес WSL: 172.22.18.247</p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('timestamp').textContent = new Date().toLocaleString('ru-RU');
+        
+        // Добавляем анимацию
+        document.querySelectorAll('.feature').forEach((feature, index) => {
+            feature.style.animation = `fadeInUp 0.6s ease-out ${index * 0.1}s both`;
+        });
+
+        // CSS анимация
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html> 
